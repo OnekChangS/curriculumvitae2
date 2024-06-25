@@ -1,0 +1,254 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: consolas;
+
+
+}
+
+section{
+	position: relative;
+	width: 100%;
+	height: 85%;
+	padding:35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: linear-gradient(45deg, rgb(33,33,33) 0%,transparent 73%),repeating-linear-gradient(90deg, rgba(127, 127, 127,0.1) 0px, rgba(127, 127, 127,0.1) 1px,transparent 1px, transparent 17px),repeating-linear-gradient(0deg, rgba(127, 127, 127,0.1) 0px, rgba(127, 127, 127,0.1) 1px,transparent 1px, transparent 17px),linear-gradient(0deg, rgb(33,33,33),rgb(33,33,33));
+
+	color:#fff;
+
+
+}
+
+section .content{
+	max-width: 75%;
+}
+
+section .content h2{
+	
+	position: relative;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	font-size: 3em;
+	transition: 0.5s;
+	transform-origin: left;
+	transform:scaleX(1);
+	color:#f38503;
+
+}
+
+section.content h2[data-scroll="in"]{
+	transform: scaleX(1);
+}
+
+section .content h2:before
+{
+	
+	content: '';
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #f5b903;
+	transform-origin: right;
+	transition: 0.5s;
+}
+
+section .content h2[data-scroll="in"]:before
+{
+	transform: scaleX(0);
+	transition-delay:0.5s;
+}
+
+section .content h3{
+	position: relative;
+	margin: 5px 0 0;
+	padding: 0;
+	display: inline-block;
+	font-size: 2em;
+	transition: 0.5s;
+	transform-origin: right;
+	transform:scaleX(0);
+
+}
+
+section .content h3[data-scroll="in"]
+{
+	transform:scaleX(1);
+	transition-delay: 1s;
+}
+
+
+section .content h3:before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #43a4b1;
+	transform-origin: left;
+	transition: 0.5s;
+}
+
+section .content h3[data-scroll="in"]:before
+{
+	transform:scaleX(0);
+	transition-delay: 1.5s;
+}
+
+section .content p {
+	font-size: 1.4em;
+	color:#d0d0d0;
+	transition: 1s;
+	opacity: 0;
+	line-height: 30px;
+	text-align: left;
+}
+
+section .content p[data-scroll="in"]
+{
+	opacity: 1;
+	transition-delay: 1s;
+}
+
+.anima{
+  position: relative;
+  animation-name: fotoM;
+  animation-duration: 2.8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes fotoM {
+  0%   { left:-120px; top:0px; opacity: 0%;}
+
+  50% {left:25px; top:0px; opacity: 100%;}
+ 
+  100% {left:-95px; top:0px;}
+}
+
+button{
+	padding: 20px;
+	margin: 10px;
+	border-radius: 21px;
+	background-color:#f38503;
+	font-family: consolas;
+	font-size: 115%;
+	text-align: center;
+	color: #fff;
+}
+
+.imgBox{
+	width: 720px;
+	margin:50px auto 20px;
+}
+
+.imgBox img{
+	width: 100%;
+	border: 4px solid #fff;
+	box-shadow: 0 5px 25px rgba(0,0,0, .5);
+}
+
+.alertarotar {
+    background:Red;
+    top:50px;
+    margin:0 auto;
+    text-align:center;
+    color:white;
+    display:none;
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 390px) {
+      .alertarotar{display:block}
+}
+
+
+
+
+
+/* interactive gallery lightbox*/
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    padding: 60px 0;
+}
+
+.subtitulo {
+    text-align: center;
+    font-weight: 700;
+    color: #9f8ad0;
+    margin-bottom: 40px;
+    font-size: 40px;
+}
+
+.gallery {
+
+}
+
+.contenedor-galeria{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.img-galeria {
+    object-fit: cover;
+    width: 30%;
+    display: block;
+    margin-bottom: 15px;
+    box-shadow: 0 0 6px rgb(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.img-galeria:hover{
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+
+.imagen-light{
+    position: fixed;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(100%);
+    transition: transform .2s ease-in-out;
+}
+
+.show{
+    transform: translate(0);
+}
+
+.agregar-imagen {
+    object-fit: cover;
+    width: 60%;
+    border-radius: 10px;
+    transform: scale(0);
+    transition: transform .3s .2s;
+}
+
+.showImage{
+    transform: scale(1);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    cursor: pointer;
+    color:#fff;
+    font-size: 25px;
+}
